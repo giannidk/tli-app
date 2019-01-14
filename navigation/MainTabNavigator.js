@@ -53,8 +53,23 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const CiccioStack = createStackNavigator({
+  Settings: SettingsScreen,
+});
+
+CiccioStack.navigationOptions = {
+  tabBarLabel: 'Ciccio',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  CiccioStack,
 });
